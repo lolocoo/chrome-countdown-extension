@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New Tab</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="weather" class="weather-widget">
+            <div class="weather-info">
+                <span id="temperature">--°C</span>
+                <span id="condition">--</span>
+            </div>
+            <div class="weather-location">
+                <span id="location">Loading...</span>
+            </div>
+        </div>
+
+        <div id="timer" class="timer">
+            <div class="timer-display">00:00:00</div>
+            <div class="timer-controls">
+                <input type="datetime-local" id="targetDate">
+                <button id="startTimer">Start Timer</button>
+                <button id="resetTimer">Reset</button>
+            </div>
+        </div>
+        
+        <div class="settings">
+            <button id="openSettings">⚙️ Settings</button>
+        </div>
+        
+        <div id="settingsModal" class="modal">
+            <div class="modal-content">
+                <h2>Settings</h2>
+                <div class="setting-item">
+                    <h3>Background Images</h3>
+                    <div id="backgroundList"></div>
+                    <input type="text" id="bgUrl" placeholder="Enter image URL">
+                    <button id="addBgUrl">Add URL</button>
+                    <input type="file" id="bgUpload" accept="image/*" multiple>
+                </div>
+                <div class="setting-item">
+                    <label>Slideshow Interval (seconds):</label>
+                    <input type="number" id="slideshowInterval" min="5" value="30">
+                </div>
+                <div class="setting-item">
+                    <label>Weather Unit:</label>
+                    <select id="weatherUnit">
+                        <option value="metric">Celsius</option>
+                        <option value="imperial">Fahrenheit</option>
+                    </select>
+                </div>
+                <button id="saveSettings">Save</button>
+                <button id="closeSettings">Close</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
